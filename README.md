@@ -1,38 +1,46 @@
-![Gbeeson Logo](../misc/images/gbeeson_website.gif)
+![Gbeeson Logo](misc/images/gbeeson_website.gif)
 
 # QA-Devops-Core-Fundamental-Project
 
 ## Introduction 
 ***
 QA tasked me with creating a project "DevOps - Core Fundamental Project"
+<br>
 
 ## What The Program Does
 ***
+<br>
 
 ## Requirments
 ***
+<br>
 
 ## Project Managment
 ***
 To manage this project I'm using Trello. If you would like to keep 
 up to date with developments be sure to checkout it out!
 [Trello Page](https://trello.com/b/CBkqPyBg/devops-core-fundamental-project)
-![Trello Board Image](../mist/images/Trello_Image.png)
+![Trello Board Image](misc/images/Trello_Image.png)
+<br>
 
 ## Architecture
 ***
+<br>
 
 ## Software/Tools Used
 ***
 - [Python3](https://www.python.org/)
 - [Trello](https://trello.com)
+<br>
 
 ## Testing
 ***
+<br>
 
 ## Authors
 *** 
 - Gregory Beeson [GitLab](https://gitlab.com/GregoryBeeson) [GitHub](https://github.com/GregoryBeeson)
+<br>
 
 ## Refrences
 ***
