@@ -1,4 +1,4 @@
-![Gbeeson Logo](misc/images/gbeeson_website.gif)
+![Gbeeson Logo](misc/Images/gbeeson_website.gif)
 
 # QA-Devops-Core-Fundamental-Project
 
@@ -20,7 +20,7 @@ QA tasked me with creating a project "DevOps - Core Fundamental Project"
 To manage this project I'm using Trello. If you would like to keep 
 up to date with developments be sure to checkout it out!
 [Trello Page](https://trello.com/b/CBkqPyBg/devops-core-fundamental-project)
-![Trello Board Image](misc/images/Trello_Image.png)
+![Trello Board Image](misc/Images/Trello_Image.png)
 <br>
 
 ## Architecture
@@ -39,7 +39,7 @@ up to date with developments be sure to checkout it out!
 
 ## Authors
 *** 
-- Gregory Beeson [GitLab](https://gitlab.com/GregoryBeeson) [GitHub](https://github.com/GregoryBeeson)
+- Gregory Beeson, [GitLab](https://gitlab.com/GregoryBeeson), [GitHub](https://github.com/GregoryBeeson)
 <br>
 
 ## Refrences
