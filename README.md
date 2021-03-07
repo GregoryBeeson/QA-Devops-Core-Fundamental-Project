@@ -13,7 +13,6 @@ QA tasked me with creating a project "DevOps - Core Fundamental Project"
 
 ## Requirments
 ***
-All of the program requirments are also in the [Requirments Text File](requirments.txt)
 <br>
 
 ## Project Managment
