@@ -1,0 +1,8 @@
+Flask
+Flask-SQLAlchemy
+SQLAlchemy
+flask-bcrypt
+pytest
+pytest-cov
+flask-testing
+Jinja2
