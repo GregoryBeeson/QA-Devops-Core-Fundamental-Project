@@ -1,8 +1,7 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+
+template_dir = "../templates"
+app = Flask(__name__, template_folder=template_dir)
+app.config['SECRET_KEY'] = 'caD1ObGOHzqV1Trn'
+
 from application import routes
-
-
-app.config['SQLALCHEMY_DATABASE_URI'] = ''
-app.config['Secret Key'] = ''
-db = SQLAlchemy(app)
