@@ -4,9 +4,11 @@
 <div class='loginForm'>
     <form method='POST' action=''>
         {{ loginForm.hidden_tag() }}
-        {{ loginForm.tableIndicator.data }} {{ loginForm.tableIndicator }}
-        {{ loginForm.username.data }} {{ loginForm.username }}
-        {{ loginForm.password.data }} {{ loginForm.password }}
+        {{ loginForm.tableIndicator.label }} {{ loginForm.tableIndicator }}
+        <br>
+        {{ loginForm.username.label }} {{ loginForm.username }}
+        <br>
+        {{ loginForm.password.label }} {{ loginForm.password }}
         <br>
         {{ loginForm.submit }}
     </form>

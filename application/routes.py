@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from application.models import loginModel
-from application.__init__ import app
+from flask_bcrypt import Bcrypt
+from application.__init__ import app, bcrypt
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -12,5 +13,8 @@ def login():
     if(request.method=='POST'):
         tableIndicator = loginForm.tableIndicator.data
         username = loginForm.username.data
-        password = loginForm.username.data
-    return render_template('login_page.html', loginForm = login())
+        password = bcrypt.generate_password_hash(loginForm.password.data) 
+        print(password)
+        if(tableIndicator == Member):
+            
+    return render_template('login_page.html', loginForm = loginModel())
