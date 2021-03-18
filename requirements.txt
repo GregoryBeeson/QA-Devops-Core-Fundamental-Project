@@ -1,8 +1,9 @@
 Flask
 Flask-SQLAlchemy
-SQLAlchemy
+SQLAlchemy<1.4
 flask-bcrypt
 pytest
 pytest-cov
 flask-testing
 Jinja2
+flask_wtf
