@@ -22,4 +22,4 @@ class loginInformation(db.Model):
     username = db.Column(db.String(30), nullable = False, unique=True)
     password = db.Column(db.String(60), nullable = False)
 
-    db.create_all()
+db.create_all()

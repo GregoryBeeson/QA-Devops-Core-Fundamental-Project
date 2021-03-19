@@ -1,9 +1,13 @@
 from flask import Flask, render_template, request, redirect, session, url_for
-from application.models import loginModel, loginInformation, registerModel
+from application.models import loginModel, loginInformation, registerModel, staff
 from flask_bcrypt import Bcrypt
 from flask_sqlalchemy import SQLAlchemy
 from application.__init__ import app, db, bcrypt
 
+#Staff Member
+user = staff(name="Admin", contact_number="07856357428", start_date = db.func.now(), admin = True)
+db.session.add(user)
+db.session.commit()
 
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/home', methods=['GET', 'POST'])
@@ -40,4 +44,8 @@ def register():
         return redirect(url_for("login"))
     return render_template('register_page.html', registerForm = registerModel())
         
-    
+@app.route('/test')
+def test():
+    if(session.get('logged_in', None) == True):
+        return "YaaaaY!"
+    return "No"
