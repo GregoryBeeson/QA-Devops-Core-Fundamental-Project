@@ -3,9 +3,11 @@
 <body>
 
 <h2>New Product</h2>
+
 <div class='productForm'>
     <form method='POST' action=''>
         {{ productForm.hidden_tag() }}
+        <br>
         {{ productForm.name.label }} {{ productForm.name }}
         <br>
         {{ productForm.price.label }} {{ productForm.price }}
@@ -13,6 +15,7 @@
         {{ productForm.submit }}
     </form>
 </div>
+
 {{message}}
 
 </body>

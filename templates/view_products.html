@@ -1,0 +1,16 @@
+<html>
+    <head><title>View Products</title></head>
+
+    <body>
+
+        <h2>List Of All Products</h2>
+
+        {% for i in all_products %}
+        <ul>
+                <li><p>Name - {{i.name}}</p></li>
+                <li><p>price - {{i.price}}</p></li>
+                <br>
+        </ul>
+        {% endfor %}
+    </body>
+</html>

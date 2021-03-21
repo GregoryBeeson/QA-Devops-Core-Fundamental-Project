@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, session, url_for
 from application.models import loginModel, loginInformation, registerModel, member, order, product, productModel
 from flask_bcrypt import Bcrypt
 from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
+from datetime import datetime, timedelta
 from application.__init__ import app, db, bcrypt
 
 @app.route('/', methods=['GET', 'POST'])
@@ -41,7 +41,7 @@ def register():
         new_user_login = loginInformation(username=input_username, password=encrypted_password)
         new_user_main = member(name = input_name, contact_number = input_contact_number, start_date = datetime.now(), login=new_user_login)
         user = loginInformation.query.filter_by(username=input_username).first()
-        if(user.username is None):
+        if(user == None):
             db.session.add(new_user_login)
             db.session.add(new_user_main)
             db.session.commit()
@@ -66,34 +66,61 @@ def profile():
         user_order = order.query.filter_by(customer_id = session['username']).first()
         user = member.query.filter_by(id = session['username']).first()
         user_name = user.name
-        return render_template('profile.html', user_order = user_order, user_name = user_name)
+        joined_on = user.start_date
+        return render_template('profile.html', user_order = user_order, user_name = user_name, joined_on = joined_on)
     return redirect(url_for("login"))
 
-"""
+
 @app.route('/neworder')
 def neworder():
     if(session.get('logged_in', None) == True):
-        if(request.method=='POST')
-    else
-"""
-
-@app.route('/newproduct')
-def newproduct():
-    if(session.get('logged_in', None) == True):
         message = ''
         if(request.method=='POST'):
+            productForm = productModel()
             input_name = productForm.name.data
             input_price = productForm.price.data
-            new_product = product(name = input_name, price = input_price)
-            same_product_check = product.query.filter_by(name = input_name).first()
-            if(same_product_check.name != input_name):
-                db.add(new_product)
-                db.commit()
+            new_prod = product(name = input_name, price = input_price)
+            same_product_check = product.query.filter_by(name=input_name).first()
+            if(same_product_check == None):
+                db.session.add(new_prod)
+                db.session.commit()
             else:
                 message = "Invalid Product name"
-                return render_template('new_product.html', productForm = productModel, message = message)
+                return render_template('new_product.html', productForm = productModel(), message = message)
     
         return render_template('new_product.html', productForm = productModel(), message = message)
     else:
         return redirect(url_for('login'))
+    return render_template('new_product.html', productForm = productModel(), message = message)
+
+
+@app.route('/newproduct', methods=['GET', 'POST'])
+def newproduct():
+    if(session.get('logged_in', None) == True):
+        message = ''
+        if(request.method=='POST'):
+            productForm = productModel()
+            input_name = productForm.name.data
+            input_price = productForm.price.data
+            new_prod = product(name = input_name, price = input_price)
+            same_product_check = product.query.filter_by(name=input_name).first()
+            if(same_product_check == None):
+                db.session.add(new_prod)
+                db.session.commit()
+            else:
+                message = "Invalid Product name"
+                return render_template('new_product.html', productForm = productModel(), message = message)
     
+        return render_template('new_product.html', productForm = productModel(), message = message)
+    else:
+        return redirect(url_for('login'))
+    return render_template('new_product.html', productForm = productModel(), message = message)
+    
+@app.route('/viewproduct')
+def viewproduct():
+    if(session.get('logged_in', None) == True):
+        all_products = product.query.all()
+        return render_template('view_products.html', all_products = all_products)
+    else:
+        return redirect(url_for('login'))
+    return render_template('view_products.html', all_products = all_products)

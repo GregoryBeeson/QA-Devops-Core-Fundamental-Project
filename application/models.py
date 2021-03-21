@@ -59,34 +59,4 @@ class productModel(FlaskForm):
     submit = SubmitField('Submit')
 
 
-
-
-
-
-
-
-
-
-"""
-class staff(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(30), nullable = False)
-    contact_number = db.Column(db.String(11), nullable = False)
-    start_date= db.Column(db.DateTime, default=db.func.now(), nullable = False)
-    admin = db.Column(db.Boolean, nullable = False)
-"""
-
-"""
-
-"""
-"""
-class loginInformationStaff(db.Model):
-    #Primary Key for test will be changed to foreigh linked to the user
-    id = db.Column(db.Integer, primary_key=True)
-    member_id = db.Column(db. Integer, db.ForeignKey("member.id"))
-    userClass = db.Column(db.String(7), nullable = False)
-    username = db.Column(db.String(30), nullable = False, unique=True)
-    password = db.Column(db.String(60), nullable = False)
-"""
-
-db.create_all()
+#db.create_all()
