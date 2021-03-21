@@ -13,7 +13,4 @@ app.config['SECRET_KEY'] = 'caD1ObGOHzqV1Trn'
 app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:NLsc8KzhOgr7aeaP@35.197.197.61/test"
 app.config['SQALCHEMY_TRACK_MODIFICATIONS']=True
 
-
-
-
 from application import routes

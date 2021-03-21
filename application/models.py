@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import SelectField, SubmitField, StringField
+from wtforms import SelectField, SubmitField, StringField, IntegerField
 from flask_sqlalchemy import SQLAlchemy
 from application.__init__ import db
 
@@ -12,7 +12,7 @@ class registerModel(FlaskForm):
     username = StringField('Username: ')
     password = StringField('Password: ')
     name = StringField('Name: ')
-    contact_number = StringField('Number: ', validators = [Length(min=11, max=11)])
+    contact_number = StringField('Number: ')
     submit = SubmitField('Submit')
 
 class loginInformation(db.Model):
@@ -30,19 +30,33 @@ class member(db.Model):
     start_date= db.Column(db.DateTime, default=db.func.now(), nullable = False)
     order = db.relationship('order', backref='order')
 
+
+#Order Section
+
 class order(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     product_id = db.Column(db.Integer, db.ForeignKey('product.id'))
     customer_id = db.Column(db.Integer, db.ForeignKey('member.id'))
     price = db.Column(db.Integer)
+"""
+class orderModel(FlaskForm):
+    all_products = product.query.all()
+    loop_finished = False
 
+    while(loop_finished != True):
+        SelectField('Products', choices = [(all_products), )
+    submit = SubmitField('Submit')
+"""
 
 class product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(60), nullable=False)
+    name = db.Column(db.String(60), nullable=False, unique=True)
     price = db.Column(db.Integer, nullable=False)
 
-
+class productModel(FlaskForm):
+    name = StringField('Name')
+    price = IntegerField('Price')
+    submit = SubmitField('Submit')
 
 
 

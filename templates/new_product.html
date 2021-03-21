@@ -1,0 +1,21 @@
+<html>
+<head><title>New Product</title></head>
+<body>
+
+<h2>New Product</h2>
+<div class='productForm'>
+    <form method='POST' action=''>
+        {{ productForm.hidden_tag() }}
+        {{ productForm.name.label }} {{ productForm.name }}
+        <br>
+        {{ productForm.price.label }} {{ productForm.price }}
+        <br>
+        {{ productForm.submit }}
+    </form>
+</div>
+{{message}}
+
+</body>
+
+
+</html>
