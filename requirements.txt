@@ -6,4 +6,5 @@ pytest
 pytest-cov
 flask-testing
 Jinja2
+datetime
 flask_wtf

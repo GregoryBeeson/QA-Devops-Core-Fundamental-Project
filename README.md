@@ -10,6 +10,17 @@ QA tasked me with creating a project "DevOps - Core Fundamental Project"
 ## Requirements
 ***
 All of the program requirments are also in the [Requirements Text File](Requirements.txt)
+<ul>
+<li>Flask</li>
+<li>Flask-SQLAlchemy</li>
+<li>SQLAlchemy</li>
+<li>flask-bcrypt</li>
+<li>pytest</li>
+<li>pytest-cov</li>
+<li>flask-testing</li>
+<li>Jinja2</li>
+<li>flask_wtf</li>
+</ul>
 <br>
 
 ## Project Managment

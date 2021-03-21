@@ -1,14 +1,20 @@
 
-
+<html>
+<head><title>Register</title></head>
+<body>
 <div class='registerForm'>
     <form method='POST' action=''>
         {{ registerForm.hidden_tag() }}
-        {{ registerForm.tableIndicator.label }} {{ registerForm.tableIndicator }}
-        <br>
         {{ registerForm.username.label }} {{ registerForm.username }}
         <br>
         {{ registerForm.password.label }} {{ registerForm.password }}
         <br>
+        {{ registerForm.name.label }} {{ registerForm.name }}
+        <br>
+        {{ registerForm.contact_number.label }} {{ registerForm.contact_number }}
+        <br>
         {{ registerForm.submit }}
     </form>
 </div>
+</body>
+</html>

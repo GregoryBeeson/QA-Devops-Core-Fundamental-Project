@@ -1,11 +1,12 @@
+<html>
 
+<head><title>Login</title></head>
 
+<body>
 <h1>Login</h1>
 <div class='loginForm'>
     <form method='POST' action=''>
         {{ loginForm.hidden_tag() }}
-        {{ loginForm.tableIndicator.label }} {{ loginForm.tableIndicator }}
-        <br>
         {{ loginForm.username.label }} {{ loginForm.username }}
         <br>
         {{ loginForm.password.label }} {{ loginForm.password }}
@@ -14,3 +15,5 @@
     </form>
 </div>
 
+</body>
+</html>
