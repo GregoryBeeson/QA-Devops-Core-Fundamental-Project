@@ -1,7 +1,10 @@
+from flask import Flask, jsonify
 from flask_wtf import FlaskForm
 from wtforms import SelectField, SubmitField, StringField, IntegerField
 from flask_sqlalchemy import SQLAlchemy
 from application.__init__ import db
+
+
 
 class loginModel(FlaskForm):
     username = StringField('Login: ')
@@ -28,25 +31,9 @@ class member(db.Model):
     name = db.Column(db.String(30), nullable = False)
     contact_number = db.Column(db.String(11), nullable = False)
     start_date= db.Column(db.DateTime, default=db.func.now(), nullable = False)
-    order = db.relationship('order', backref='order')
+    order = db.relationship('orders', backref='orders')
 
-
-#Order Section
-
-class order(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    product_id = db.Column(db.Integer, db.ForeignKey('product.id'))
-    customer_id = db.Column(db.Integer, db.ForeignKey('member.id'))
-    price = db.Column(db.Integer)
-"""
-class orderModel(FlaskForm):
-    all_products = product.query.all()
-    loop_finished = False
-
-    while(loop_finished != True):
-        SelectField('Products', choices = [(all_products), )
-    submit = SubmitField('Submit')
-"""
+#Product
 
 class product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -58,5 +45,19 @@ class productModel(FlaskForm):
     price = IntegerField('Price')
     submit = SubmitField('Submit')
 
+class productEditModel(FlaskForm):
+    name = StringField('Name')
+    price = IntegerField('Price')
+    submit = SubmitField('Submit')
 
-#db.create_all()
+#Order Section
+
+class orders(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    product_id = db.Column(db.Integer, db.ForeignKey('product.id'))
+    customer_id = db.Column(db.Integer, db.ForeignKey('member.id'))
+    price = db.Column(db.Integer)
+
+
+
+db.create_all()
