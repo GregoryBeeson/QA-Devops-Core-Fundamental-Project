@@ -5,6 +5,10 @@
 ## Introduction 
 ***
 QA tasked me with creating a project "DevOps - Core Fundamental Project"
+
+In order to achive the goals set out for me by QA I have decided to make a simple
+CRUD application with a login system. This program allows a user to add products,
+edit the products, register users and make orders. 
 <br>
 
 ## Requirements
