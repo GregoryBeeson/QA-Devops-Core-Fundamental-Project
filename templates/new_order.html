@@ -1,0 +1,16 @@
+<html>
+<head><title>New Order</title></head>
+
+<h2>Create Order</h2>
+<a href="/profile">Back to profile</a>
+{% for i in all_products %}
+<ul>
+        <li><p>Name - {{i.name}}</p></li>
+        <li><p>price - {{i.price}}</p></li>
+        <a href='/createorder/{{i.id}}/{{i.price}}'>Order</a> 
+        <br>
+</ul>
+{% endfor %}
+<a href="/profile">Back to profile</a>
+
+</html>

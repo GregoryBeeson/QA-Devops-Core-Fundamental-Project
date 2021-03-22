@@ -1,0 +1,10 @@
+Flask
+Flask-SQLAlchemy
+SQLAlchemy<1.4
+flask-bcrypt
+pytest
+pytest-cov
+flask-testing
+Jinja2
+datetime
+flask_wtf

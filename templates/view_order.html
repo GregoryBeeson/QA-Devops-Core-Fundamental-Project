@@ -1,0 +1,23 @@
+<html>
+<head><title>View Orders - {{user_name}}</title></head>
+<body>
+
+<h2>View Orders</h2>
+
+<a href="/profile">Back to profile</a>
+{% for i in all_orders %}
+<h4>Order - {{ loop.index}}</h4>
+{% for a in all_products %}
+{% if a.id == i.product_id %} 
+<ul>
+<li>Product Name - {{a.name}}</li>
+{% endif %}
+{% endfor %}
+<li>Order Price - {{i.price}}</li>
+</ul>
+<br>
+{% endfor %}
+<a href="/profile">Back to profile</a>
+</body>
+
+</html>

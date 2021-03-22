@@ -1,0 +1,18 @@
+<html>
+    <head><title>View Products</title></head>
+
+    <body>
+
+        <h2>List Of All Products</h2>
+        <a href="/profile">Back to profile</a>
+        {% for i in all_products %}
+        <ul>
+                <li><p>Name - {{i.name}}</p></li>
+                <li><p>price - {{i.price}}</p></li>
+                <a href='/updateproduct/{{i.id}}'>edit</a> 
+                <br>
+        </ul>
+        {% endfor %}
+        <a href="/profile">Back to profile</a>
+    </body>
+</html>

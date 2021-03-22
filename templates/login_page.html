@@ -1,0 +1,20 @@
+<html>
+
+<head><title>Login</title></head>
+
+<body>
+<h1>Login</h1>
+<div class='loginForm'>
+    <form method='POST' action=''>
+        {{ loginForm.hidden_tag() }}
+        {{ loginForm.username.label }} {{ loginForm.username }}
+        <br>
+        {{ loginForm.password.label }} {{ loginForm.password }}
+        <br>
+        {{ loginForm.submit }}
+    </form>
+</div>
+{{message}}
+<p>Need an Account Register <a href="/register"> here</a></p>
+</body>
+</html>
