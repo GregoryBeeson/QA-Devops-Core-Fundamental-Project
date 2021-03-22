@@ -80,3 +80,16 @@ class TestViews(TestBase):
     def test_updateproduct_redirect_get(self):
         response = self.client.get(url_for('updateProduct', id=1))
         self.assertEqual(response.status_code, 302)
+
+""" 
+#Getting same error for any test forms using ints tries "argument of type 'int' is not iterable"
+class TestForms(TestBase):
+    def test_new_product(self):
+        response = self.client.post(
+            url_for('newproduct'),
+            self.assertEqual(session['logged_in'], True),
+            data = {'Name': "test", 'Age': int(1)},
+            follow_redirects=True
+        )
+        self.assertIn(response.status_code, 302)
+"""
