@@ -13,7 +13,6 @@ def login():
     message = ""
     loginForm = loginModel()
     if(request.method=='POST'):
-        stored_password = bcrypt.generate_password_hash(("password"), rounds=12).decode('utf-8')
         input_username = loginForm.username.data
         inputed_password = loginForm.password.data
         user = loginInformation.query.filter_by(username=input_username).first()
