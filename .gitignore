@@ -1,1 +1,5 @@
 **application/__pycache__
+**/testing/__pycache__
+**/testing/.coverage
+**__pycache__
+**.pytest_cache
