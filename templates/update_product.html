@@ -1,0 +1,20 @@
+<html>
+<head><title>Update Product - {{product_name}} </title></head>
+<body>
+<h2>Update Product - {{product_name}}</h2>
+<div class='updateproductForm'>
+    <form method='POST' action=''>
+        {{ updateproductForm.hidden_tag() }}
+        <br>
+        {{ updateproductForm.name.label }} {{ updateproductForm.name }}
+        <br>
+        {{ updateproductForm.price.label }} {{ updateproductForm.price }}
+        <br>
+        {{ updateproductForm.submit }}
+    </form>
+</div>
+<a href="/profile">Back to profile</a>
+</body>
+
+
+</html>
