@@ -38,16 +38,25 @@ up to date with developments be sure to checkout it out!
 
 ## Architecture
 ***
+Website Architecture
 <br>
+<img src="misc/Images/fig_1_web_design_architecture.png" alt="web deisgn architecture" width="500"/><br>
+Database Architecture<br>
+<img src="misc/Images/fig_2_database_entity_relationship_diagram.png" alt="database relationship" width="500"/>
+
 
 ## Software/Tools Used
+
 ***
 - [Python3](https://www.python.org/)
 - [Trello](https://trello.com)
+- [Vscode](https://code.visualstudio.com/)
+- [GCP](https://cloud.google.com/)
 <br>
 
 ## Testing
 ***
+![Testing](misc/Images/testing.PNG)
 <br>
 
 ## Author
